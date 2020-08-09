@@ -1,0 +1,26 @@
+diff --git a/src/main/build/version.h b/src/main/build/version.h
+index 8bdd40ebf..d0e6d9bf9 100644
+--- a/src/main/build/version.h
++++ b/src/main/build/version.h
+@@ -28,7 +28,7 @@
+ #define FC_VERSION_MINOR            2  // increment when a minor release is made (small new feature, change etc)
+ #define FC_VERSION_PATCH_LEVEL      1  // increment when a bug is fixed
+ 
+-#define FC_VERSION_STRING STR(FC_VERSION_MAJOR) "." STR(FC_VERSION_MINOR) "." STR(FC_VERSION_PATCH_LEVEL)
++#define FC_VERSION_STRING STR(FC_VERSION_MAJOR) "." STR(FC_VERSION_MINOR) "." STR(FC_VERSION_PATCH_LEVEL) . ".AKRA"
+ 
+ extern const char* const targetName;
+ 
+diff --git a/src/main/osd/osd.c b/src/main/osd/osd.c
+index 874c3cc49..bf5c0ac58 100644
+--- a/src/main/osd/osd.c
++++ b/src/main/osd/osd.c
+@@ -882,7 +882,7 @@ static timeDelta_t osdShowArmed(void)
+     } else {
+         ret = (REFRESH_1S / 2);
+     }
+-    displayWrite(osdDisplayPort, 12, 7, DISPLAYPORT_ATTR_NONE, "ARMED");
++    displayWrite(osdDisplayPort, 9, 7, DISPLAYPORT_ATTR_NONE, "AKRAMODE");
+ 
+     return ret;
+ }
