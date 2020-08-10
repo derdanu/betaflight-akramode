@@ -1,0 +1,27 @@
+#cloud-config
+package_upgrade: true
+packages:
+  - build-essential
+  - nginx
+write_files:
+  - owner: www-data:www-data
+    path: /etc/nginx/sites-available/default
+    content: |
+      server {
+        listen 80;
+        root /mnt/build/firmware;
+        location / {
+            autoindex on;
+        }
+      }
+runcmd:
+  - service nginx restart
+  - mkdir -p /mnt/build
+  - mkdir -p /mnt/build/firmware
+  - cd /mnt/build
+  - git clone https://github.com/derdanu/betaflight-akramode
+  - git clone https://github.com/betaflight/betaflight.git
+  - cd betaflight
+  - HOME="/root" git config --global user.email "akra@mode.com"
+  - HOME="/root" git config --global user.name "AkraMode"
+  - for i in 4.0.6 4.2.1; do git checkout tags/$i -b $i; make arm_sdk_install;  git apply ../betaflight-akramode/$i.patch; make TARGET=FF_RACEPIT; cp obj/*.hex ../firmware; make clean TARGET=FF_RACEPIT; git stash; done;
