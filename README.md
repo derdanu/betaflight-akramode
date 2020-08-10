@@ -7,4 +7,6 @@ az vm create --resource-group bfbuild --name bfbuild --image UbuntuLTS --admin-u
 az vm open-port --port 80 --resource-group bfbuild --name bfbuild --output none
 ```
 ## Cleanup 
+```
 az group delete --name bfbuild
+```
