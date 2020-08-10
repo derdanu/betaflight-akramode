@@ -24,4 +24,4 @@ runcmd:
   - cd betaflight
   - HOME="/root" git config --global user.email "akra@mode.com"
   - HOME="/root" git config --global user.name "AkraMode"
-  - for i in 4.0.6 4.2.1; do git checkout tags/$i -b $i; make arm_sdk_install;  git apply ../betaflight-akramode/$i.patch; make TARGET=FF_RACEPIT; cp obj/*.hex ../firmware; make clean TARGET=FF_RACEPIT; git stash; done;
+  - for i in $(find ../betaflight-akramode/ -name "*.patch" -printf "%f\n" | cut -d '.' -f 1,2,3); do git checkout tags/$i -b $i; make arm_sdk_install;  git apply ../betaflight-akramode/$i.patch; make TARGET=FF_RACEPIT; cp obj/*.hex ../firmware; make clean TARGET=FF_RACEPIT; git stash; done;
