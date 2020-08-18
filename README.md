@@ -9,7 +9,8 @@ az vm create --size Standard_D4s_v3 --resource-group bfbuild --name bfbuild --im
 az vm open-port --port 80 --resource-group bfbuild --name bfbuild --output none
 ```
 ## Firmware
-Wait a couple of minutes until all versions and targets are build. After that, point your Webbrowser to the IP of the created VM to Download the Unified Target. Please apply the default config for FC https://github.com/betaflight/unified-targets/tree/master/configs/default afterwards.
+Wait a couple of minutes until all versions and targets are build. After that, point your Webbrowser to the IP of the created VM to Download the Firmware file. Complete Zip File of all files is provided as well. 
+For firmwae less than 4.2 all targets were built, starting with 4.2 only the unified targets were built.  Please apply the default config for FC https://github.com/betaflight/unified-targets/tree/master/configs/default afterwards.
 
 ## Cleanup 
 ```
