@@ -1,0 +1,13 @@
+diff --git a/src/main/osd/osd.c b/src/main/osd/osd.c
+index e81fea85f..abda2a6c6 100644
+--- a/src/main/osd/osd.c
++++ b/src/main/osd/osd.c
+@@ -803,7 +803,7 @@ static void osdRefreshStats(void)
+ static void osdShowArmed(void)
+ {
+     displayClearScreen(osdDisplayPort);
+-    displayWrite(osdDisplayPort, 12, 7, "ARMED");
++    displayWrite(osdDisplayPort, 9, 7, "AKRAMODE");
+ }
+ 
+ STATIC_UNIT_TESTED void osdRefresh(timeUs_t currentTimeUs)
