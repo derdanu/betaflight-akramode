@@ -1,4 +1,6 @@
 #/bin/bash
+mkdir -p /mnt/build/firmware
+git clone https://github.com/betaflight/betaflight.git
 cd betaflight
 HOME="/root" git config --global user.email "akra@mode.com"
 HOME="/root" git config --global user.name "AkraMode"
