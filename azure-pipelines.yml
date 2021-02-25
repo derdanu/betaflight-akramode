@@ -14,7 +14,7 @@
 
 variables:
   owner: derdanu
-  repoName: betaflight-akramode-pipeline
+  repoName: betaflight-akramode
   releaseNotes: This is a build of a akramode enabled release tag. It may be unstable and result in corrupted configurations or data loss. **Use only for testing.**
 
 name: $(Build.RequestedFor)_$(Build.SourceBranchName)_$(BuildID)
